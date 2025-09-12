@@ -1,13 +1,22 @@
----
-layout: presentation
----
-
-{% for post in site.posts reversed %}
-	{% include slide.html %}
-	<div class="page-break"></div>
-{% endfor %}
-{% unless site.simple-slideshow %}
-{% if site.overview %}
-<section id="overview" class="step" {% for attr in site.overview-data %} data-{{attr[0]}}="{{attr[1]}}"{% endfor %}></section>
-{% endif %}
-{% endunless %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calidad del Aire en Medellín</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Calidad del Aire en Medellín</h1>
+    </header>
+    <main>
+        <p>
+            A continuación se muestra el Geoportal de SIATA con los datos de calidad del aire en tiempo real para el Área Metropolitana del Valle de Aburrá.
+        </p>
+        <section class="map-container">
+            <iframe src="http://siata.gov.co/siata_nuevo/index.php/mapa" width="100%" height="600px" style="border:0;"></iframe>
+        </section>
+    </main>
+</body>
+</html>
